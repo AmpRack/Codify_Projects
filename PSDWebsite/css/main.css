@@ -1,0 +1,587 @@
+html {
+	width: 1555px;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url("../img/background.png");
+	font-family: "Oswald";
+	min-width: 1530px; /* Remove this line to have the right half float independantly! */
+}
+
+/* #Social Button Rollovers*/
+.fb_icon:hover {
+	content: url("../img/icon_fb_hover.png");
+}
+.gp_icon:hover {
+	content: url("../img/icon_gp_hover.png");
+}
+.tw_icon:hover {
+	content: url("../img/icon_tw_hover.png");
+}
+.yt_icon:hover {
+	content: url("../img/icon_yt_hover.png");
+}
+.pn_icon:hover {
+	content: url("../img/icon_pn_hover.png");
+}
+
+
+header { /* Contains everything down to the bottom of the red banner */
+	margin: 0 auto;
+}
+	nav { /* Social buttons, Login, and Cart*/
+		padding: 3px 200px;
+		border-top: 3px solid #c2342e;
+		background-color: #333333;
+	}
+		#user_info {
+			float: right;
+			position: relative;
+			top: -3px;
+			color: white;
+			font-size: 14px;
+			font-family: arial;		
+		}
+			#user_info a {
+				vertical-align: center;
+				color: white;
+				text-decoration: none;
+			}
+			#user_info a:hover {
+				text-decoration: underline;
+			}
+		.red_button {
+			float: right;
+			position: relative;
+			margin-left: 20px;
+			padding: 12px 20px 12px 40px;
+			background-color: #c2342e;
+			color: white;
+			border: 1px solid #990000;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+			.red_button:hover {
+				 text-decoration: underline;
+			}
+			.fa-shopping-cart {
+				color: white;
+				font-size: 24px;
+				position: relative;
+				left: 52px;
+				top: 7px;
+				z-index: 1;
+			}
+
+	#logo { /* The company logo and name */
+		margin: 0;
+		padding: 15px 0 0 200px;
+		width: 200px;
+		display: inline-block;
+		float: left;
+	}
+		#logo img {
+			width: 70px;
+			height: 70px;
+		}
+		#logo h1 {
+			display: inline-block;
+			position: relative;
+			left: -25px;
+			margin: 0;
+			vertical-align: top;
+			padding-top: 16px;
+			font-family: "Helvetica";
+			font-size: 34px;
+			font-weight: normal;
+		}
+			#logo h1:nth-of-type(1) {
+				color: white;
+				position: relative;
+				left: -52px;
+				z-index: 1;
+			}
+
+	#shop_links li { /* Quick links to other parts of the site */
+		display: inline;
+		list-style: none;
+		font-family: "Helvetica";
+		font-size: 24px;
+		float: right;
+		margin: 18px 0;
+	}
+		#shop_links li a {
+			font-family: "Helvetica";
+			color: black;
+			text-decoration: none;
+			font-size: 14px;
+			margin: 0 15px;
+			padding: 20px 5px;
+		}
+		#shop_links li:nth-child(1) a {
+			margin-right: 200px;
+		}
+		#shop_links li a:hover {
+			color: #c2342e;
+			border-bottom: 3px solid #c2342e;
+		}
+
+	#banner { /* Where we are on the site, right now */
+		margin-top: 100px;
+		padding-left: 200px;
+		padding-bottom: 22px;
+		background-color: #c2342e;
+		color: white;
+		letter-spacing: 0.5px;
+	}
+		#banner h1 {
+			display: inline-block;
+			margin: 0;
+			margin-top: 20px;
+			text-shadow: 1px 1px #000000;
+		}
+		#banner h2 {
+			margin: 0;
+			padding: 0px;
+			font-size: 16px;
+			font-weight: normal;
+			text-shadow: 1px 1px #000000;
+		}
+		#banner h2 a {
+			color: white;
+			text-decoration: none;
+		}
+		#banner h2 a:hover {
+			border-bottom: 2px solid white;
+		}
+		.fa-home { /* A button to return Home */
+			float: right;
+			color: white;
+			margin-top: 5px;
+			margin-right: 200px;
+			padding: 10px;
+			font-size: 64px;
+			border: 10px solid #c2342e;
+		}
+			.fa-home:hover {
+				border: 10px solid white;
+				border-radius: 64px;
+			}
+
+
+#sort_bar { /* Links to different catagories, sort and display options */
+	margin: 20px 200px;
+	background-color: white;
+	border: 1px solid #e1e1e1;
+	border-radius: 5px;
+}
+	#genres {
+		width: 550px;
+		margin: 0;
+		padding: 12px 15px 16px 18px;
+		display: inline-block;
+	}
+	#sort_bar li {
+		display: inline;
+		list-style: none;
+		font-family: "Helvetica";
+		font-size: 12px;
+		letter-spacing: 0px;
+		color: white;
+		text-shadow: 1px 1px #000000;
+		padding: 0 5px;
+		cursor: default;
+	}
+		#sort_bar li a {
+			color: black;
+			text-decoration: none;
+			text-shadow: none;
+			font-size: 16px;
+			letter-spacing: 0;
+			vertical-align: bottom;
+		}
+			#sort_bar li a:hover {
+				text-decoration: underline;
+			}
+	#sort_right {		
+		float: right;
+		margin: 0;
+		padding: 14px;
+	}
+		#sort_right p {
+			margin: 0;
+			display: inline-block;
+		}
+		.fa-th-large, .fa-list {
+			padding: 0 5px;
+			color: black;
+			font-size: 22px;
+		}
+			.fa-th-large:hover, .fa-list:hover {
+				color: #c2342e;
+			}
+
+
+section { /* Actual Content; album listings */
+	margin-left: 200px;
+	float: left;
+}
+	#album_list td {
+		width: 200px;
+	}
+
+	.album { /* Container for each listing */
+		background-color: white;
+		border-radius: 10px;
+		border: 1px solid #dfdfdf;
+		padding: 10px;
+	}
+		.album img {
+			z-index: 1;
+			width: 250px;
+			height: 250px;
+			margin: 0;
+			border-radius: 15px;
+		}
+		.album h1{
+			margin: 5px 0;
+			font-size: 18px;
+			display: inline-block;
+		}
+		.album h2 { 
+			display: inline-block;
+			margin: 5px 0;
+			float: right;
+			padding-top: 4px;
+			font-style: italic;
+			font-weight: normal;
+			font-size: 14px;
+		}
+		.album p {
+			margin-top: 10px;
+		}
+		.album a {
+			text-decoration: none;
+		}
+	.sale_sticker {
+		display: inline;
+		position: absolute;
+		background-color: rgba(194, 52, 46, 0.8);
+		color: white;
+		border-radius: 15px;
+		z-index: 2;
+		padding: 6px 4px;
+		margin: 8px;
+	}
+	.price_sale {
+		color: white;
+		background-color: #c2342e;
+		padding: 0 3px;
+		margin-left: 10px;
+	}
+	.album:nth-of-type(1) h1 {
+		position: relative;
+	}
+
+	.stars { /* Container for the rating-stars */
+		display: block;
+	}
+		.fa-star {
+			color: #c2342e;
+		}
+		.fa-star:nth-child(5) {
+			color: black;
+		}
+
+	.button { /* Add to Cart button */
+		display: inline-block;
+		float: right;
+		background-color: #222222;
+		color: white;
+		font-size: 12px;
+		font-family: "arial";
+		border: 1px solid black;
+		border-radius: 4px;
+		padding: 5px 7px;
+	}
+		.button:hover {
+			background-color: #e1e1e1;
+			color: #222222;
+		}
+	#page_nums { /* Page navigation */
+		background-color: white;
+		border-radius: 10px;
+		border: 1px solid #dfdfdf;
+		margin: 15px 0;
+		padding: 5px 0;
+	}
+		#page_nums ul {
+			margin: 5px;
+			padding: 0;
+		}
+			#page_nums ul li {
+				display: inline-block;
+				list-style: none;
+				padding: 0 15px;
+			}
+			#page_nums a {
+				color: black;
+				text-decoration: none;
+			}
+			#page_nums a:hover {
+				color: #c2342e;
+				text-decoration: none;
+			}
+
+
+aside {	/* Price Filter, Best Sellers, Genre Catagories, Search box*/
+	float: right;
+	margin-right: 175px;
+	display: inline-block;
+	width: 300px;
+}
+	aside h1, h2 {
+		margin: 0;
+		padding-left: 10px;
+	}
+	aside h1 {
+		font-size: 18px;
+	}
+	aside a{
+		text-decoration: none;
+	}
+	aside a:hover {
+		text-decoration: underline;
+	}
+	#price { /* Price Filter and Sliders */
+		margin-bottom: 30px;
+	}
+		#price_slider {
+			margin-left: 12px;
+		}
+		#price p {
+			display: inline-block;
+			padding-left: 22px;
+			vertical-align: middle;
+			font-family: "arial";
+			font-size: 14px;
+			font-weight: bold;
+		}
+		#price span.button {
+			border-radius: 1px;
+			float: none;
+			margin-left: 50px;
+		}
+	.red_bar, .red_box { /* NOTE! red_bar is decorative, red_box is a slider. */
+		display: block;
+		background-color: #c2342e;
+		margin: 7px 0;
+		color: #c2342e;
+		height: 5px;
+		width: 30px;
+		font-family: none;
+	}
+	.red_box {
+		display: inline-block;
+		height: 10px;
+		width: 18px;
+		cursor: pointer;
+	}
+	.white_bar {
+		display: inline-block;
+		color: white;
+		background-color: white;
+		height: 6px;
+		width: 200px;
+		border-top: 1px solid #e1e1e1;
+		border-bottom: 1px solid #e1e1e1;
+		margin: 20px 0 7px 0;
+	}
+
+	#best { /* Best Selling Items */
+		margin-bottom: 30px;
+	}
+		.best_seller {
+			margin: 15px 0;
+			height: 102px;
+		}
+			.best_seller img {
+				float: left;
+				width: 100px;
+				height: 100px;
+				margin: 0 10px;
+			}
+			.best_seller h2 {
+				font-size: 14px;
+				font-family: "Arial";
+				padding-top: 10px;
+			}
+			.best_seller a {
+				color: black;
+				font-size: 12px;
+			}
+			.fa-comment {
+				padding-right: 4px;
+				vertical-align: middle;
+			}
+	#catagories { /* Another, different, set of genre specific links */
+		margin-bottom: 30px;
+	}
+		.fa-caret-right {
+			padding-right: 15px;
+		}
+		#catagories a {
+			display: block;
+			padding: 10px 0;
+			border-bottom: 1px dashed #d0d0d0;
+			color: black;
+			width: 250px;
+			font-size: 14px;
+		}
+		span.comment_num {
+			color: #999999;
+		}
+	#search_more input {
+		margin-top: 15px;
+		padding: 5px 0 3px 0;
+		font-size: 18px;
+	}
+		.fa-search {
+			color: black;
+			position: relative;
+			margin-left: -25px;
+			font-size: 24px;
+		}
+		.fa-search:hover {
+			color: #c2342e;
+		}
+
+
+footer { /* Actually 2 separate footers; the top should be collapsable b/w/o the red button */
+	clear: both;
+	color: #e1e1e1;
+	display: block;
+	background-color: #333333;
+	border-top: 5px solid #222222;
+	padding: 0 0 0 200px;
+}
+	.f_block { /* Inidivual site-specific entries */
+		display: inline-block;
+		margin: 5px 28px;
+		width: 225px;
+		letter-spacing: 1px;
+		vertical-align: top;
+	}
+		.f_block a {
+			color: #e1e1e1;
+			text-decoration: none;
+		}
+			.f_block a:hover {
+				text-decoration: underline;
+			}
+		.f_block h1 {
+			margin: 10px 0;
+			color: #e1e1e1;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.f_block p {
+			color: #e1e1e1;
+			font-size: 13px;
+			font-family: "arial";
+			font-weight: normal;
+			margin: 0;
+			width: 200px;
+		}
+		.f_block input {
+			margin-bottom: 20px;
+		}
+		.f_block:nth-of-type(1) {
+			margin-left: 0;
+		}
+			.f_block:nth-of-type(1) p {
+				border: none;
+				width: 225px;
+			}
+			.f_block:nth-of-type(2) p {
+				border-bottom: 1px dashed #e1e1e1;
+				padding: 7px;
+			}
+	.f_blogpost {
+		display: block;
+		height: 80px;
+		width: 230px;
+	}
+		.f_blogpost img {
+			clear: both;
+			width: 70px;
+			height: 70px;
+			float: left;
+			padding-right: 10px;
+			padding-bottom: 10px;
+		}
+			.f_blogpost h2 {
+				color: #e1e1e1;
+				font-size: 13px;
+				font-family: "arial";
+				font-weight: normal;
+			}
+			.f_blogpost a {
+				margin: 0;
+				padding: 0;
+				display: inline;
+				width: auto;
+			}
+			.f_blogpost p {
+				font-size: 10px;
+				vertical-align: middle;
+				display: inline;
+			}
+			.fa-comment {
+				vertical-align: middle;
+			}
+		.f_block span.button {
+			border-radius: 2px;
+			float: none;
+		}
+	footer span.red_button { /* Used to collapse or expand the footer */
+		float: none;
+		padding: 0px;
+		margin: 0;
+		top: -12px;
+		padding: 0 6px;
+		cursor: pointer;
+	}
+		.fa-caret-up {
+			padding-bottom: 5px;
+		}
+	#real_footer { /* This footer will always be active, even if the top half collapses */
+		width: 100%;
+		height: 30px;
+		position: relative;
+		margin-left: -200px;
+		padding-left: 200px;
+		background-color: #222222;
+		border-top: 2px solid black;
+	}
+		#real_footer p, #real_footer a {
+			display: inline-block;
+			margin: 0;
+			color: #888888;
+			font-size: 10px;
+			font-family: "arial";
+			vertical-align: middle;
+		}
+		#real_footer p {
+			margin-left: 588px;
+			padding-top: 9px;
+		}
+		#real_footer a {
+			padding-right: 15px;
+			text-decoration: none;
+		}
+		#real_footer a:hover {
+			color: #e1e1e1;
+			text-decoration: none;
+		}
