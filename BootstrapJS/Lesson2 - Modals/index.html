@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>BootstrapJS Tutorials</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!-- First Modal -->
+        <div id="testModal1" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal title text</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Nullam varius fringilla urna, sit amet hendrerit ante aliquam at. Aliquam hendrerit metus ac blandit tristique. Etiam lobortis, nibh vel mattis posuere, nibh metus rutrum nisl, malesuada porttitor nunc metus non tellus. Nulla ac purus sagittis, hendrerit nunc id, dapibus lorem.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second (large) Modal -->
+        <div id="testModal2" class="modal modal_lg">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">
+                            <span aria-hidden="true">X</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                    </div>
+                    <div class="modal-content">
+                        <p>Etiam vehicula et metus id lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pharetra malesuada nunc quis viverra. Integer pretium tristique cursus. Aliquam vel nisi augue. Nulla consectetur leo vitae enim viverra tempus. Integer et congue risus, eget imperdiet neque. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actual page content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>BootstrapJS modal</h1>
+                    <button class="btn btn-primary btn-block" data-target="#testModal1" data-toggle="modal">Launch Modal 1</button>
+                </div>
+
+                <div class="col-md-6">
+                    <h3>Phasellus aliquet cursus ligula</h3>
+                    <p>Cras lacinia ut lorem vitae blandit. Suspendisse consectetur est quis dui maximus, eget fermentum libero interdum. Aenean hendrerit, arcu quis pulvinar feugiat</p>
+                    <button class="btn btn-danger btn-lg" data-target="#testModal2" data-toggle="modal">Launch Modal 2</button>
+                </div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
