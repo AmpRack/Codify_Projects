@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Digital';
+    src: url('fonts/DIGITALDREAMFAT-webfont.eot');
+    src: url('fonts/DIGITALDREAMFAT-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/DIGITALDREAMFAT-webfont.woff') format('woff'),
+         url('fonts/DIGITALDREAMFAT-webfont.ttf') format('truetype'),
+         url('fonts/DIGITALDREAMFAT-webfont.svg#digital_dream_fatregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: black;
+}
+
+#clock_bg {
+    margin: 150px auto;
+    width: 325px; /* Must equal the total width of #clock! */
+    padding: 15px 20px;
+    background-color: black;
+    border-radius: 50px;
+    -webkit-transition: background-color .2s;
+       -moz-transition: background-color .2s;
+         -o-transition: background-color .2s;
+            transition: background-color .2s;
+}
+
+#clock {
+    display: inline-block;
+    position: relative;
+    width: 285px;
+    height: 101px;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+    vertical-align: center;
+    color: #05E9FF;
+    font-family: "Digital";
+    background-color: black;
+    border: 5px solid #05E9FF;
+    border-radius: 30px;
+    font-size: 36px;
+    -webkit-transition: border .20s, padding .20s;
+       -moz-transition: border .20s, padding .20s;
+         -o-transition: border .20s, padding .20s;
+            transition: border .20s, padding .20s;
+}

@@ -1,0 +1,228 @@
+/*! HTML5 Boilerplate Defaults v4.3.0 | MIT License | http://h5bp.com/ */
+
+html, button, input, select, textarea { color: #222; }
+html { font-size: 1em; line-height: 1.4; }
+
+::-moz-selection { background: #b3d4fc; text-shadow: none; }
+::selection { background: #b3d4fc; text-shadow: none; }
+
+hr { display: block; height: 1px; border: 0; 
+     border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+audio, canvas, img, video { vertical-align: middle; }
+fieldset { border: 0; margin: 0; padding: 0; }
+textarea { resize: vertical; }
+
+.browsehappy { margin: 0.2em 0; background: #ccc; color: #000;
+               padding: 0.2em 0; }
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#calculator {
+    width: 325px;
+    height: auto;
+    margin: 3% auto;
+    padding: 20px 20px 9px 20px;
+    background-color: #6dc5dc;
+    border-radius: 3px;
+    box-shadow: 0 4px #52bad5, 0 10px 15px 10px rgba(0 0 0 0.2);
+    font: bold 14px "arial";
+}
+    .keys, .top {
+        overflow: hidden;
+    }
+    .keys span:hover {
+        background-color: #9c89f6;
+        box-shadow: #6b54d3;
+        color: white;
+    }
+    .screen {
+        height: 131px;
+        width: 212px;
+        float: right;
+        padding: 0 10px;
+        margin-bottom: 8px;
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 3px;
+        box-shadow: inset 0 4px rgba(0,0,0,0.2));
+        font-size: 17px;
+        line-height: 40px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2));
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    .left {
+        float: left;
+        width: 73px;
+    }
+    * span {
+        float: left;
+        position: relative;
+        top: 0;
+        cursor: pointer;
+        width: 66px;
+        height: 36px;
+        background-color: white;
+        border-radius: 3px;
+        box-shadow: 0 4px rgba(0,0,0,0.2);
+        margin: 0 7px 11px 0;
+        color: #888888;
+        line-height: 36px;
+        text-align: center;
+        user-select: none;
+        transition: all 0.2s ease;
+    }
+        * span:active {
+            box-shadow: 0 0;
+            top: 4px;
+        }
+    span.clear {
+        background-color: #ee836e;
+        box-shadow: 0 4px #e85c41;
+        color: white;
+    }
+        span.clear:active {
+            box-shadow: 0 0;
+            top: 4px;
+        }
+    span.factorial {
+        float: left;
+    }
+
+    span.operator {
+        background-color: #fff0f5;
+        margin-right: 0;
+    }
+    span.eval {
+        background-color: #ffe8aa;
+        box-shadow: 0 4px #fed156;
+    }
+        span.eval:hover {
+            background-color: #fed156;
+            box-shadow: 0 4px #febe12;
+            color: white;
+        }
+        span.eval:active {
+            box-shadow: 0 0;
+            top: 4px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir { background-color: transparent; border: 0; overflow: hidden; *text-indent: -9999px; }
+    .ir:before { content: ""; display: block; width: 0; height: 150%; }
+
+    .hidden {display: none !important; visibility: hidden; }
+    .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px;
+                      overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+    .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+        clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+    .invisible { visibility: hidden; }
+    .clearfix:before, .clearfix:after { content: " "; display: table; }
+    .clearfix:after { clear: both; }
+    .clearfix { *zoom: 1; }
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
