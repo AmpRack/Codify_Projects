@@ -36,8 +36,8 @@ function startTime() {
 	if (mins + secs >= 118) {
 		document.getElementById('clock_bg').style.background = "#05E9FF";
 	}
-	else if (mins + secs == 0) {
-		document.getElementById('clock_bg').style.background = "black";
+	if (mins + secs <= 2) {
+		document.getElementById('clock_bg').style.background = "#000000";
 	}
 
 /* Adjust time for display, print, and restart */
