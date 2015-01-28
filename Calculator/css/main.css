@@ -59,6 +59,10 @@ textarea { resize: vertical; }
         text-align: center;
         letter-spacing: 1px;
     }
+        .screen p {
+            line-height: 20px;
+            margin: 5px 0;
+        }
     .left {
         float: left;
         width: 73px;

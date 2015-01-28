@@ -1,23 +1,44 @@
+/* Move content down the screen after each equation/evaluation */
+function lineShift() {
+	line5.innerHTML = line4.innerHTML;
+	line4.innerHTML = line3.innerHTML;
+	line3.innerHTML = line2.innerHTML;
+	line2.innerHTML = line1.innerHTML;
+	line1.innerHTML = '';
+}
+
 var keys = document.querySelectorAll('#calculator span');
 var operators = ["+", "-", "*", "/", "^2", "!"];
 var decimalAdded = false;
 
 for (var i = 0; i < keys.length; i++) {
 	keys[i].onclick = function(e) {
-		var input = document.querySelector('.screen-lcd');
-		var inputVal = input.innerHTML;
+		var line1 = document.getElementById('line1');
+		var line2 = document.getElementById('line2');
+		var line3 = document.getElementById('line3');
+		var line4 = document.getElementById('line4');
+		var line5 = document.getElementById('line5');
+		var inputVal = line1.innerHTML;
 		var btnVal = this.innerHTML;
 
+		/* Infinity should count as the end of the equation */
 		if (inputVal == 'Infinity') {
-			input.innerHTML = '';
+			lineShift();
 			inputVal += btnVal;
 		}
 		
+		/* Clear ALL lines */
 		if (btnVal == 'C') {
-			input.innerHTML = '';
+			line1.innerHTML = '';
+			line2.innerHTML = '';
+			line3.innerHTML = '';
+			line4.innerHTML = '';
+			line5.innerHTML = '';
 			decimalAdded = false;
 		}
+		/* Value Squared */
 		else if (btnVal == '^2') {
+			line1.innerHTML += btnVal;
 			var equation = inputVal;
 			var lastChar = equation[equation.length - 1];
 			if ((operators.indexOf(lastChar) > -1) || (lastChar == ".")) {
@@ -25,10 +46,13 @@ for (var i = 0; i < keys.length; i++) {
 			}
 			if (equation) {
 				var temp = eval(equation);
-				input.innerHTML = temp * temp;
+				lineShift();
+				line1.innerHTML = temp * temp;
 			}
 		}
+		/* Value Factorial */
 		else if (btnVal == '!') {
+			line1.innerHTML += btnVal;
 			var equation = inputVal;
 			var lastChar = equation[equation.length - 1];
 			if ((operators.indexOf(lastChar) > -1) || (lastChar == ".")) {
@@ -42,10 +66,12 @@ for (var i = 0; i < keys.length; i++) {
 						answer *= temp;
 						temp -= 1;
 					}
-					input.innerHTML = answer;
+					lineShift();
+					line1.innerHTML = answer;
 				}
 			}
 		}
+		/* Solve the problem */
 		else if (btnVal == '=') {
 			var equation = inputVal;
 			var lastChar = equation[equation.length - 1];
@@ -54,12 +80,14 @@ for (var i = 0; i < keys.length; i++) {
 				equation = equation.replace(/.$/, '');
 			}
 			if (equation) {
-				input.innerHTML = eval(equation);
+				lineShift();
+				line1.innerHTML = eval(equation);
 			}
 			decimalAdded = false;
 		}
+		/* Otherwise, push it to the screen */
 		else {
-			input.innerHTML += btnVal;
+			line1.innerHTML += btnVal;
     	}
 	}
 }
