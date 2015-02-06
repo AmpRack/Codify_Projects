@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Portfolio">
+    <meta name="author" content="rob.hill">
 
     <title>rob.hill | developer portfolio</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/grayscale.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600' rel='stylesheet' type='text/css'>
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Raleway:400,500,600'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -32,125 +26,168 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
+                <h1 class="navbar-brand">rob.hill | portfolio</h1>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll textright" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll textright" href="#projects">Projects</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll textright" href="#skills">Skills</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll textright" href="#contact">Contact</a>
-                    </li>
+                    <li class="hidden"><a href="#page-top"></a></li>
+                    <li><div class="btn-hover">
+                        <a class="page-scroll first-link" href="#about">About</a>
+                        <a class="page-scroll second-link" href="#about"> # </a>
+                    </div></li>
+                    <li><div class="btn-hover">
+                        <a class="page-scroll first-link" href="#projects">Projects</a>
+                        <a class="page-scroll second-link" href="#projects"> {...} </a>
+                    </div></li>
+                    <li><div class="btn-hover">
+                        <a class="page-scroll first-link" href="#skills">Skills</a>
+                        <a class="page-scroll second-link" href="#skills"> ( ); </a>
+                    </div></li>
+                    <li><div class="btn-hover">
+                        <a class="page-scroll first-link" href="#contact">Contact</a>
+                        <a class="page-scroll second-link" href="#contact"> @ </a>
+                    </div></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">rob.hill</h1>
-                        <p class="intro-text">web developer  /  pastry chef</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
+    <!-- Carousel Header -->
+    <header>
+        <div class="overlay"> <!-- Static layer in front of carousel -->
+            <h1>rob.hill</h1>
+            <p>front-end web developer</p>
+          
+            <a href="#about" class="btn btn-circle page-scroll">
+               <i class="fa fa-angle-double-down animated"></i>
+            </a>
+        </div>
+
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#header-carousel" data-slide-to="1"></li>
+                <li data-target="#header-carousel" data-slide-to="2"></li>
+                <li data-target="#header-carousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="img/header01.png" title="Header01">
+                </div>
+                <div class="item">
+                    <img src="img/header01.png" title="Header01">
+                </div>
+                <div class="item">
+                    <img src="img/header01.png" title="Header01">
+                </div>
+                <div class="item">
+                    <img src="img/header01.png" title="Header01">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="about-section">
+    <!-- About Me -->
+    <section id="about" class="container-fluid">
+        <div class="content-section row">
+            <h2 class="section-title text-center">About Me</h2>
+            <div class="col-sm-4 content-border height-fix">
+                <div class="content-about">
+                    <h3>Past</h3>
+                    <hr/>
+                    <p>Originally from Arkansas, I moved to San Francisco in 2006 to attend the California Culinary Academy. I graduated in 2007, and have since worked in various restaurants around the Bay Area. </p>
+                </div>
+            </div>
+            <div class="col-sm-4 content-border height-fix">
+                <div class="content-about">
+                    <h3>Present</h3>
+                    <hr/>
+                    <p>Currently, I'm attending <a href="http://www.codifyacademy.com/">Codify Academy</a>, studying and practicing the fundamentals of mobile-first, responsive, front-end development.</p>
+                </div>
+            </div>
+            <div class="col-sm-4 content-border height-fix">
+                <div class="content-about">
+                    <h3>Future</h3>
+                    <hr/>
+                    <p>...?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="container-fluid text-center">
+        <div class="row content-section">
+            <h2 class="section-title text-center">Projects</h2>
+                <hr/>
+            <div class="col-md-8 col-md-offset-2">
+                <p>Coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container-fluid text-center">
+        <div class="row content-section">
+        <h2 class="section-title text-center">Skills</h2>
+            <div class="col-sm-5 skills-left">
+                <h3>...for work</h3>
+                <hr/>
+                <p>HTML / CSS</p>
+                <p>JavaScript / jQuery</p>
+                <p>Responsive design</p>
+            </div>
+            <div class="col-sm-5 col-sm-offset-2 skills-right">
+                <h3>...for fun</h3>
+                <hr/>
+                <p>C# (Unity3d)</p>
+                <p>Blender</p>
+                <p>Photoshop</p>
+                <p>Ruby</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container-fluid text-center">
+        <div class="row contact-section">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Me</h2>
-                <p>I'm a front-end developer living in San Francisco. I'm currently attending <a href="http://www.codifyacademy.com/">Codify Academy</a>, studying HTML5, CSS3, JavaScript / jQuery, and Bootstrap.</p>
-                <p>I'm also a trained chef. I've graduated from the California Culinary Academy in 2007, and have been working in different restaurants around the Bay Area ever since. I can work any station, but I specialize in breads and pastries.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="content-section text-center">
-        <div class="projects-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Projects</h2>
-                    <p>Coming soon...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="content-section text-center">
-        <div class="skills-section">
-            <div class="container">
-                <div class="col-lg-4 col-lg-offset-1">
-                <h2>Skills for work</h2>
-                    <p>HTML / CSS</p>
-                    <p>JavaScript / jQuery</p>
-                    <p>Responsive design</p>
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 skills-right">
-                    <h2>Skills for fun</h2>
-                    <p>C# (Unity3d)</p>
-                    <p>Blender</p>
-                    <p>Photoshop</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="content-section text-center">
-        <div class="contact-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Contact Info</h2>
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="#email-modal" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">Email</span></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/AmpRack" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/AmpRack/" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/101725946504782360408" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                        </li>
-                    </ul>
-                </div>
+                <h2>CONTACT ME</h2>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="#email-modal" class="btn btn-default btn-lg">
+                            <i class="fa fa-envelope fa-fw"></i> <span class="network-name">EMAIL</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/AmpRack" class="btn btn-default btn-lg">
+                            <i class="fa fa-twitter fa-fw"></i> <span class="network-name">TWITTER</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/AmpRack/" class="btn btn-default btn-lg">
+                            <i class="fa fa-github fa-fw"></i> <span class="network-name">GITHUB</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/101725946504782360408" class="btn btn-default btn-lg">
+                            <i class="fa fa-google-plus fa-fw"></i> <span class="network-name">GOOGLE+</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
 
         <!-- Contact form, appears after the Email button above is used. -->
         <div id="email-modal" class="email-form">
-            <div>
-                <div class="inner-border">
+            <div class="inner-border">
                 <a class="email-close" title="Close" href="#close">X</a>
-                <h2>Contact Form</h2>
+                <h2>CONTACT FORM</h2>
                 <p>Send me your questions, comments, inqueries, complaints, or otherwise.</p>
                 
-                <!-- -->
                 <form id="contact-me" class="form-horizontal" role="form" method="post" action="send_form_email.php">
                     <div class="form-group">
                         <label for="contact-name" class="col-sm-2 control-label">Name</label>
@@ -182,25 +219,18 @@
 
                     <input class="submit-btn" type="submit" name="Submit" value="Submit">
                 </form>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; Rob Hill 2015</p>
-        </div>
-    </footer>
+    <div class="footer">
+        <p>Copyright &copy; Rob Hill 2015</p>
+    </div>
 
-    <!-- jQuery -->
     <script src="js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
     </body>
 </html>
