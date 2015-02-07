@@ -46,8 +46,8 @@ audio:not([controls]) { display: none; }
          url('../fonts/SpecialElite-webfont.svg#special_eliteregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
+
 html, body {
 	width: 100%;
 	height: 100%;
@@ -56,13 +56,16 @@ body {
 	background-color: black;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 35px;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
+	h3 {
+		font-size: 32px;
+		text-align: center;
+	}
 	p {
 	    margin-bottom: 25px;
 	    font-size: 16px;
@@ -80,6 +83,7 @@ a {
     color: #bbbbbb;
     -webkit-transition: all .2s ease-in-out;
        -moz-transition: all .2s ease-in-out;
+         -o-transition: all .2s ease-in-out;
     		transition: all .2s ease-in-out;
 }
 	a:hover, a:focus {
@@ -111,6 +115,7 @@ hr {
 	line-height: 22px;
 	margin-bottom: 0;
 	color: #888888;
+	font-family: 'Elite'; 
 }
 	.nav li { 
 		text-align: right;
@@ -132,7 +137,7 @@ hr {
 		.nav li:nth-of-type(4):hover { /* .skills color #EEB422 */
 			background: rgba(238,180,34,.45);
 		}
-		.nav li:nth-of-type(5):hover { /* @contact color */
+		.nav li:nth-of-type(5):hover { /* @contact color #F40000*/
 			background: rgba(244,0,0,.45);
 		}
 	a.first-link {
@@ -234,13 +239,10 @@ hr {
     text-align: center;
 	z-index: 10;
 }
-	.title-box {
-		width: 95%;
-		margin: 4% auto;
-	}
+
 	.overlay h1 {
-		display: inline;
-	    margin: 0;
+		display: inline-block;
+	    margin: 5% 0 0 0;
 		font-family: "Elite";
 	    font-size: 40px;
 		text-align: center;
@@ -266,10 +268,6 @@ hr {
         height: 100%;
         padding: 0;
     }
-    .title-box {
-		width: 300px;
-		margin: 0 auto;
-	}
     .overlay h1 {
     	display: block;
         font-size: 100px;
@@ -277,24 +275,22 @@ hr {
         font-size: 72px;
 	    letter-spacing: 27px;
     }
-
     .overlay p {
         font-size: 24px;
         line-height: 30px;
 	    letter-spacing: 11px;
     }
-
 }   
 
 .btn-circle { /* Disabled when the navbar collapses */
 	display: none;
 }
-@media(min-width:768px) {
+@media(min-width: 600px) {
 	.btn-circle { 
 		display: inline-block;
 	    width: 70px;
 	    height: 70px;
-	    margin-top: 15px;
+	    margin-top: 5%;
 	    padding: 7px 16px;
 	    border: 2px solid white;
 	    border-radius: 35px;
@@ -360,9 +356,10 @@ hr {
 /* ###############################################
 	Pretty much the rest of the body content here
    ############################################### */
-.content-section { /* Wraps each major section */
-    width: 90%;
-    margin: 0 auto;
+/* General Stuff */
+.row { 
+    width: 100%;
+    margin: 0;
     padding: 50px 0;
     color: white;
     background-color: black;
@@ -370,29 +367,33 @@ hr {
 	.section-title {
 		font-size: 48px;
 		margin-bottom: 25px;
-	}
-	.content-section h3 {
-		font-size: 32px;
-		margin-bottom: 0;
+		text-align: center;
 	}
 @media (min-width: 768px) {
-	.content-section {
+	.row {
 		padding: 150px 0 50px 0;
-	}
-	.content-border {
-		height: 80%;
 	}
 }
 
-/* About Me */
-#about h2, #about h3, #about p {
-	color: #3299CC;
+.btn-content { /* Individual content containers */
+	border-radius: 15px;
+	background-color: black;
+	border: 2px solid rgba(0,0,0,0);
+	text-align: center;
 }
-	#about.container {
-		margin: 0;
+	.btn-content h3 {
+		font-size: 32px;
+		margin-bottom: 0;
+	}
+
+/* About Me */
+#about {
+	padding: 0;
+}
+	#about h2, #about h3, #about p {
+		color: #3299CC;
 	}
 	#about h3 {
-		text-align: center;
 		padding-top: 10px;
 	}
 	#about p {
@@ -402,30 +403,14 @@ hr {
 	#about hr {
 		border-color: #3299CC;
 	}
-	.content-border { /* Eventually, needs to be the background div for a pseudo border */
-		display: block;
-		width: 95%;
-		margin: 0;
-		padding: 0;
-		border-radius: 15px;
-		background-color: #3299CC;
+	#about .btn-content { /* The actual content holder, inside the content-border div*/
 		border: 2px solid #3299CC;
-	}
-	.content-about { /* The actual content holder, inside the content-border div*/
-		width: 99%;
-		margin: auto;
-		border-radius: 15px;
-		background-color: black;
-		border: 2px solid transparent;
+		margin: 5%;
+		padding: 10px 3.5%;
 	}
 @media (min-width: 768px) {
-	.content-border {
-		display: inline-block;
-		width: 30%;
-		margin: 10px 1.5%;
-		
-	}
 }
+
 
 /* Projects Section */
 #projects h2, #projects h3, #projects p {
@@ -435,6 +420,8 @@ hr {
 		width: 50%;
 		border-color: #458B00;
 	}
+@media (min-width: 768px) {
+}
 
 /* Skills Section */
 #skills h2, #skills h3, #skills p {
@@ -443,58 +430,53 @@ hr {
 	#skills hr {
 		border-color: #EEB422;
 	}
-
-#contact {
-	margin-bottom: 120px;
-	padding: 150px 0;
-	color: white;
-	background: url(../img/contact-bg.png) no-repeat center center scroll;
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-    		background-size: cover;
+@media (min-width: 768px) {
 }
-	.btn { /* This is going to have to go... */
-	    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	    font-weight: 400;
-	    -webkit-transition: all .4s ease-in-out;
-	       -moz-transition: all .4s ease-in-out;
-	    	 -o-transition: all .4s ease-in-out;
-	    		transition: all .3s ease-in-out;
+
+/* Contact Section */
+#contact {
+	padding: 150px 0;
+}
+	#contact h2, #contact p {
+		color: #fd0000;
 	}
-		.btn-default {
-		    border: 1px solid transparent;
-		    color: white;
-		    background-color: transparent;
-		}
-		.btn-default:hover, .btn-default:focus {
-		    border: 1px solid black;
-		    outline: 0;
-		    color: black;
-		    background: -webkit-radial-gradient(#e1e1e1 2%, #888888 90%);
-		    background:    -moz-radial-gradient(#e1e1e1 2%, #888888 90%);
-		    background:      -o-radial-gradient(#e1e1e1 2%, #888888 90%);
-		    background:         radial-gradient(#e1e1e1 2%, #888888 90%);
-		}
+	#contact hr {
+		width: 50%;
+		border-color: #fd0000;
+	}
+	#contact a {
+		display: block;
+		line-height: 48px;
+	}
+	#contact .btn-content {
+		padding: 0;
+		margin: 15px 10px;
+		border-color: #fd0000;
+	}
+@media (min-width: 768px) {
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* .....and the footer. */
+.footer {
+	display: block;
+	width: 100%;
+    height: 40px;
+    border-top: 1px solid rgba(40, 040, 40, 0.5);
+    background-color: #0a0a0a;
+}
+	.footer p {
+	    margin-top: 10px;
+	    margin-bottom: 0;
+	    padding-right: 3%;
+	    font-size: 12px;
+	    float: right;
+	    color: #888888;
+	}
 
 
 /* #############
 	Email Modal
-   #############*/
+   ############# */
 .email-form { /* Darkens the entire screen, prepares the modal */
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
@@ -536,7 +518,7 @@ hr {
 	    height: 525px;
 	    width: 100%;
 	}
-	.email-close { /* Button to close the contact form */
+	#contact .email-close { /* Button to close the contact form */
 		background: #606061;
 		color: white;
 		line-height: 25px;
@@ -550,7 +532,7 @@ hr {
 		border-radius: 12px;
 		box-shadow: 1px 1px 3px black;
 	}
-		.email-close:hover { 
+		#contact .email-close:hover { 
 			background: #e1e1e1; 
 			color: black;
 		}
@@ -566,20 +548,3 @@ hr {
 		height: 485px;
 	}
 }
-
-
-.footer {
-	display: block;
-	width: 100%;
-    height: 40px;
-    border-top: 1px solid rgba(40, 040, 40, 0.5);
-    background-color: #0a0a0a;
-}
-	.footer p {
-	    margin-top: 10px;
-	    margin-bottom: 0;
-	    padding-right: 3%;
-	    font-size: 12px;
-	    float: right;
-	    color: #888888;
-	}

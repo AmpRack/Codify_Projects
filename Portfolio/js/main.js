@@ -7,7 +7,7 @@ $(window).scroll(function() {
     }
 });
 
-// Page scrolling feature (requires jQuery Easing plugin)
+// Page scrolling
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
@@ -23,62 +23,43 @@ $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
 
-// Stretch text to fit in a given width
-$.fn.stretch_text = function(){
-    var elmt          = $(this),
-        cont_width    = elmt.width(),
-        txt           = elmt.html(),
-        one_line      = $('<span class="stretch_it">' + txt + '</span>'),
-        nb_char       = elmt.text().length,
-        spacing       = cont_width/nb_char,
-        txt_width;
-    
-    elmt.html(one_line);
-    txt_width = one_line.width();
-    
-    if (txt_width < cont_width){
-        var  char_width     = txt_width/nb_char,
-             ltr_spacing    = spacing - char_width + (spacing - char_width)/nb_char ; 
-  
-        one_line.css({'letter-spacing': ltr_spacing});
-    } else {
-        one_line.contents().unwrap();
-        elmt.addClass('justify');
-    }
-};
-$(document).ready(function () {
-    $('.stretch').each(function(){
-        $(this).stretch_text();
-    });
+// Resize groups of divs to an equal height        
+equalheight = function(container){
+
+var currentTallest = 0,
+     currentRowStart = 0,
+     rowDivs = new Array(),
+     $el,
+     topPosition = 0;
+ $('.btn-content').each(function() {
+
+   $el = $(this);
+   $($el).height('auto')
+   topPostion = $el.position().top;
+
+   if (currentRowStart != topPostion) {
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+     rowDivs.length = 0; // empty the array
+     currentRowStart = topPostion;
+     currentTallest = $el.height();
+     rowDivs.push($el);
+   } else {
+     rowDivs.push($el);
+     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+  }
+   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+     rowDivs[currentDiv].height(currentTallest);
+   }
+ });
+}
+
+$(window).load(function() {
+  equalheight('.main article');
 });
 
-// Force divs to be equal height, based on the tallest
-/* Isnt working quite right... 
-var currentTallest = 0;
-var currentRowStart = 0;
-var rowDivs = new Array();
-var $el = 0
-var topPosition = 0;
 
-$('.height-fix').each(function() { // This is the class that does that work
-    $el = $(this);
-    topPostion = $el.position().top;
-
-    if (var currentRowStart != topPostion) {
-        for (currentDiv = 0; currentDiv < rowDivs.length ; currentDiv++) {
-            rowDivs[currentDiv].height(currentTallest);
-        }
-    rowDivs.length = 0;
-    currentRowStart = topPostion;
-    currentTallest = $el.height();
-    rowDivs.push($el);
-   }
-   else {
-        rowDivs.push($el);
-        currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
-    }
- 
-    for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
-        rowDivs[currentDiv].height(currentTallest);
-    }
-});​  */
+$(window).resize(function(){
+  equalheight('.main article');
+});

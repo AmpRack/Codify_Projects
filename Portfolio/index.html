@@ -60,7 +60,6 @@
         <div class="overlay"> <!-- Static layer in front of carousel -->
             <h1>rob.hill</h1>
             <p>front-end web developer</p>
-          
             <a href="#about" class="btn btn-circle page-scroll">
                <i class="fa fa-angle-double-down animated"></i>
             </a>
@@ -69,47 +68,50 @@
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#header-carousel" data-slide-to="1"></li>
+            <!--<li data-target="#header-carousel" data-slide-to="1"></li>
                 <li data-target="#header-carousel" data-slide-to="2"></li>
-                <li data-target="#header-carousel" data-slide-to="3"></li>
+                <li data-target="#header-carousel" data-slide-to="3"></li>-->
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
                     <img src="img/header01.png" title="Header01">
                 </div>
-                <div class="item">
-                    <img src="img/header01.png" title="Header01">
+            <!--<div class="item">
+                    <img src="img/header02.png" title="Header02">
                 </div>
                 <div class="item">
-                    <img src="img/header01.png" title="Header01">
+                    <img src="img/header03.png" title="Header03">
                 </div>
                 <div class="item">
-                    <img src="img/header01.png" title="Header01">
-                </div>
+                    <img src="img/header04.png" title="Header04">
+                </div>-->
             </div>
         </div>
     </header>
 
     <!-- About Me -->
     <section id="about" class="container-fluid">
-        <div class="content-section row">
-            <h2 class="section-title text-center">About Me</h2>
-            <div class="col-sm-4 content-border height-fix">
-                <div class="content-about">
+        <div class="row">
+        <h2 class="section-title">About Me</h2>
+            
+            <div class="col-sm-4">
+                <div class="btn-content">
                     <h3>Past</h3>
                     <hr/>
                     <p>Originally from Arkansas, I moved to San Francisco in 2006 to attend the California Culinary Academy. I graduated in 2007, and have since worked in various restaurants around the Bay Area. </p>
                 </div>
             </div>
-            <div class="col-sm-4 content-border height-fix">
-                <div class="content-about">
+
+            <div class="col-sm-4">
+                <div class="btn-content">
                     <h3>Present</h3>
                     <hr/>
                     <p>Currently, I'm attending <a href="http://www.codifyacademy.com/">Codify Academy</a>, studying and practicing the fundamentals of mobile-first, responsive, front-end development.</p>
                 </div>
             </div>
-            <div class="col-sm-4 content-border height-fix">
-                <div class="content-about">
+
+            <div class="col-sm-4">
+                <div class="btn-content">
                     <h3>Future</h3>
                     <hr/>
                     <p>...?</p>
@@ -119,73 +121,78 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="container-fluid text-center">
-        <div class="row content-section">
-            <h2 class="section-title text-center">Projects</h2>
-                <hr/>
-            <div class="col-md-8 col-md-offset-2">
+    <section id="projects" class="container-fluid">
+        <div class="row">
+        <h2 class="section-title">Projects</h2>
+        <hr/>
+            <div class="btn-content">
                 <p>Coming soon...</p>
             </div>
         </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="container-fluid text-center">
-        <div class="row content-section">
-        <h2 class="section-title text-center">Skills</h2>
-            <div class="col-sm-5 skills-left">
+    <section id="skills" class="container-fluid">
+        <div class="row">
+        <h2 class="section-title">Skills</h2>            
+            <div class="col-sm-5">
                 <h3>...for work</h3>
                 <hr/>
-                <p>HTML / CSS</p>
-                <p>JavaScript / jQuery</p>
-                <p>Responsive design</p>
+                <p class="btn-content">HTML / CSS</p>
+                <p class="btn-content">JavaScript / jQuery</p>
+                <p class="btn-content">Responsive design</p>
             </div>
-            <div class="col-sm-5 col-sm-offset-2 skills-right">
+
+            <div class="col-sm-5 col-sm-offset-2">
                 <h3>...for fun</h3>
                 <hr/>
-                <p>C# (Unity3d)</p>
-                <p>Blender</p>
-                <p>Photoshop</p>
-                <p>Ruby</p>
+                <p class="btn-content">C# (Unity3d)</p>
+                <p class="btn-content">Blender</p>
+                <p class="btn-content">Photoshop</p>
+                <p class="btn-content">Ruby</p>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="container-fluid text-center">
-        <div class="row contact-section">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>CONTACT ME</h2>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="#email-modal" class="btn btn-default btn-lg">
-                            <i class="fa fa-envelope fa-fw"></i> <span class="network-name">EMAIL</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/AmpRack" class="btn btn-default btn-lg">
-                            <i class="fa fa-twitter fa-fw"></i> <span class="network-name">TWITTER</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/AmpRack/" class="btn btn-default btn-lg">
-                            <i class="fa fa-github fa-fw"></i> <span class="network-name">GITHUB</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/101725946504782360408" class="btn btn-default btn-lg">
-                            <i class="fa fa-google-plus fa-fw"></i> <span class="network-name">GOOGLE+</span>
-                        </a>
-                    </li>
-                </ul>
+    <section id="contact" class="container-fluid">
+        <div class="row">
+        <h2 class="section-title">Contact</h2>
+        <hr/>
+            
+            <div class="col-sm-4 col-sm-offset-2">
+                <div class="btn-content">
+                <!--<a href="#email-modal">-->
+                    <a href="mailto:rob.hill@gmail.com">
+                        <i class="fa fa-envelope fa-fw"></i> <span class="network-name">EMAIL</span>
+                    </a>
+                </div>
+                <div class="btn-content">
+                    <a href="https://twitter.com/AmpRack">
+                        <i class="fa fa-twitter fa-fw"></i> <span class="network-name">TWITTER</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="btn-content">
+                    <a href="https://github.com/AmpRack/">
+                        <i class="fa fa-github fa-fw"></i> <span class="network-name">GITHUB</span>
+                    </a>
+                </div>
+                <div class="btn-content">
+                    <a href="https://plus.google.com/101725946504782360408">
+                        <i class="fa fa-google-plus fa-fw"></i> <span class="network-name">GOOGLE+</span>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- Contact form, appears after the Email button above is used. -->
+        <!-- Contact form, appears after the Email button above is used. 
+             Currently disabled, pending an update. 
         <div id="email-modal" class="email-form">
             <div class="inner-border">
                 <a class="email-close" title="Close" href="#close">X</a>
-                <h2>CONTACT FORM</h2>
+                <h2>Contact Form</h2>
                 <p>Send me your questions, comments, inqueries, complaints, or otherwise.</p>
                 
                 <form id="contact-me" class="form-horizontal" role="form" method="post" action="send_form_email.php">
@@ -220,7 +227,7 @@
                     <input class="submit-btn" type="submit" name="Submit" value="Submit">
                 </form>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <!-- Footer -->
