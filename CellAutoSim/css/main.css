@@ -1,0 +1,112 @@
+/* ##################################################
+    Pond Reset - Start everything with a clean slate
+   ################################################## */
+
+html, body, div, span, applet, object, iframe, h1, 
+h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, 
+acronym, address, big, cite, code, del, dfn, em, 
+font, img, ins, kbd, q, s, samp, small, strike, 
+strong, sub, sup, tt, var, .overlaycaption, figure, 
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, 
+form, label, legend, table, caption, tbody, tfoot, 
+thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%; }
+    
+ol, ul  { list-style: none; }
+
+:focus  { outline: 0; }
+
+/* deleting the default appearence for form elements */
+
+
+.clearfix:after { content: ""; display: block; clear: both; visibility: hidden; font-size: 0;  height: 0; }
+.clearfix { *display: inline-block; height: 1%; }
+.clear { clear: both; display: block; font-size: 0; height: 0; line-height: 0; width:100%; }
+
+/* HTML5 display definitions */
+article, aside, details, .overlaycaption, figure, footer, header, hgroup, menu, nav, section, dialog { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; visibility: hidden; }
+
+/* ############################################ */
+p {
+	display: inline-block;
+}
+	p.small {
+		display: block;
+		font-size: 11px;
+	}
+
+i.fa-eject { /* Rotate the icon to make it the frame-advance button */
+	-webkit-transform: rotate(90deg);
+	   -moz-transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+	     -o-transform: rotate(90deg);
+			transform: rotate(90deg);
+}
+
+select, input, button {
+	display: inline-block;
+	float: right;
+}
+
+#content-window {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+	#content-window > div {
+		overflow: hidden;
+	}
+#control-panel {
+	position: fixed;
+	width: 300px;
+	top: -240px;
+	right: 0;
+	margin: 0 10px;
+	margin-bottom: 25px;
+	padding: 10px;
+	float: right;
+	background-color: #dddddd;
+	border: 1px solid #999999;
+	border-top: none;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-webkit-transition: top 1s ease-in-out;
+	transition: top 1s ease-in-out;
+}
+	#control-panel:hover {
+		top: 0;
+		-webkit-transition-delay: 1s;
+	}
+	.controls li {
+		display: block;
+		padding: 5px 0;
+	}
+#seed-input {
+	width: 35%;
+}
+#control-panel hr {
+	margin-top: 28px;
+}
+.div-cell {
+	display: inline;
+	position: relative;
+	width: 30px; 
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: white;
+	color: white;
+	float: left;
+}
+	.active {
+		background-color: black;
+		color: black;
+	}
