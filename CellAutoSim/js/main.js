@@ -4,7 +4,13 @@
 // Fill the screen with a grid, randomly activate some of the cells,
 // and following the rules of CGoL, generate a new grid. Animate the
 // transition between states. All state-changes should happen at the same
-// time. 
+// time. After a set delay, process a new grid, animate, delay, repeat.
+// At any point, the user can pause the cycle, and click a cell to change
+// it's state before resuming. 
+
+// Right now, Initial generation is working again.
+// The check for activeNeighbors is somehow broken...  
+// Also need to finish 'the cycle', but it wont be accurate until 
 
 // Holds everything that needs to get passed around
 var $controller = new Object();
@@ -23,7 +29,7 @@ function initSettings() {
 	$controller.running = true; 			// Running or Paused?
 
 	// Generates the div-cells to html
-	// NOTE: Can probably do this in the gridPopulator, once it gets fixed
+	// NOTE: Can probably add this in the gridPopulator iterator to save time
 	$.each($controller.gridNext, function(j, horizontal) {
 		$.each(horizontal, function(i, tile) {
 			$('#content-window').append($("<div />", { 
@@ -40,7 +46,7 @@ function initSettings() {
 	});
 }
 
-// Generates a random array grid
+// Generates the initial random grid
 function gridPopulator() {
 	var x = Math.floor($controller.horz / $controller.cellSize);
 	var y = Math.floor($controller.vert / $controller.cellSize);
@@ -49,18 +55,14 @@ function gridPopulator() {
 	var outputArray = new Array();
 	$controller.randSeed = $.now();
 
-	// If theres no specific seed, just grab one
-
 	for (var j = 0; j < y; j++) {
-	console.log('Test');
 		tempArray = [];
 		for (var i = 0; i < x; i++) {
 			// There's a 20% chance of rolling an active cell
 			random = Math.floor(Math.random() * $controller.randSeed);
 			if ((random % 100) <= 20) {
 				tempArray[i] = 1;
-			}
-			else {
+			} else {
 				tempArray[i] = 0;
 			}
 		}
@@ -70,7 +72,7 @@ function gridPopulator() {
 }
 
 
-// Iterate through the grid, in the given boundaries and count active classes
+// A 3x3 range is set, go through the squares and count up the number of active tiles
 function checkNeighbors(range) {
 	var totalActive = 0;
 	console.log(range);
@@ -120,13 +122,13 @@ function determineGridNext() {
 					boundaries.yLower = (y - 1);
 				}
 
-				if (x >= $controller.grid[y].length - 1) {
+				if ((x + 1) >= $controller.grid[y].length) {
 					boundaries.xUpper = x;
 				} else {
 					boundaries.xUpper = (x + 1);
 				}
 
-				if (y > $controller.grid.length) {
+				if ((y + 1) >= $controller.grid.length) {
 					boundaries.yUpper = y;
 				} else {
 					boundaries.yUpper = (y + 1);
@@ -148,8 +150,7 @@ function determineGridNext() {
 				}
 				else if (tile === 0 && activeNeighbors != 3) {
 					$controller.gridNext[y][x] = 0; // Inactive areas stay inactive
-				}
-				else {
+				} else {
 					$controller.gridNext[y][x] = 1; // Growth
 				}
 
@@ -189,6 +190,7 @@ function runSimulator() {
 	getUserChanges();
 	determineGridNext();
 }
+
 
 
 $(document).ready(function() {	
