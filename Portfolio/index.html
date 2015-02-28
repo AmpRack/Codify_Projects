@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Raleway:400,500,600'>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -65,28 +71,14 @@
             </a>
         </div>
 
-        <div id="header-carousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
-            <!--<li data-target="#header-carousel" data-slide-to="1"></li>
-                <li data-target="#header-carousel" data-slide-to="2"></li>
-                <li data-target="#header-carousel" data-slide-to="3"></li>-->
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <img src="img/header01.png" title="Header01">
-                </div>
-            <!--<div class="item">
-                    <img src="img/header02.png" title="Header02">
-                </div>
-                <div class="item">
-                    <img src="img/header03.png" title="Header03">
-                </div>
-                <div class="item">
-                    <img src="img/header04.png" title="Header04">
-                </div>-->
-            </div>
-        </div>
+        <div id="img-carousel">
+            <ul id="carousel">
+                <li><img src="img/header01.png" title="Header01"></li>
+                <li><img src="img/header01.png" title="Header02"></li>
+                <li><img src="img/header01.png" title="Header03"></li>
+                <li><img src="img/header01.png" title="Header04"></li>
+            </ul>
+        </div>        
     </header>
 
     <!-- About Me -->
@@ -125,8 +117,61 @@
         <div class="row">
         <h2 class="section-title">Projects</h2>
         <hr/>
-            <div class="btn-content">
-                <p>Coming soon...</p>
+            <div class="project-holder">
+
+                <div class="project-item">
+                    <div id="project-clock" class="btn-content">
+                        <p>88:88</p>
+                    </div>
+                    <h3 class="project-title">Digital Clock</h3>
+                </div>
+
+                <div class="project-item">
+                    <div id="project-calc" class="btn-content">
+                        <div id="calc-keys">
+                            <div class="calc-key">+</div>
+                            <div class="calc-key">-</div>
+                            <div class="calc-key">x</div>
+                            <div class="calc-key">÷</div>
+                        </div>
+                        <div id="calc-bg">
+                            <div id="calc-bg-inlay"></div>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Scientific Calculator</h3>
+                </div>
+
+                <div class="project-item">
+                    <div id="project-vault" class="btn-content">
+                        <div id="roadsign"></div>
+                        <p>VAULT</p>
+                        <p>SHOP</p>
+                    </div>
+                    <h3 class="project-title">The Vault Shop</h3>
+                </div>
+
+                <div class="project-item">
+                    <div id="project-sim" class="btn-content">
+                        <div class="sim-cell">. </div>
+                        <div class="sim-cell">. </div>
+                        <div class="sim-cell cell-black">. </div>
+                        <div class="sim-cell">. </div>
+                        <div class="sim-cell cell-black">. </div>
+                        <div class="sim-cell">. </div>
+                        <div class="sim-cell cell-black">. </div>
+                        <div class="sim-cell">. </div>
+                        <div class="sim-cell cell-black">. </div>
+                        <div class="sim-cell cell-black">. </div>
+                        <div class="sim-cell">. </div>
+                        <div class="sim-cell cell-black">. </div>
+                        <div class="sim-cell">. </div>
+                        <div class="sim-cell cell-black">. </div>
+                        <div class="sim-cell">. </div>
+                        <div class="sim-cell">. </div>
+                    </div> 
+                    <h3 class="project-title">Cellular Automata</h3>
+                </div>
+
             </div>
         </div>
     </section>
@@ -235,9 +280,6 @@
         <p>Copyright &copy; Rob Hill 2015</p>
     </div>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+
     </body>
 </html>
