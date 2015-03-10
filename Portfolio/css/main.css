@@ -246,21 +246,73 @@ hr {
 /* ################
 	Header Carousel
    ################ */
+
+header {
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+#img-carousel {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+	#img-carousel li {
+		display: inline-block;
+		position: relative;
+		float: left;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		background-size: contain;
+	}
+	#img-carousel li img {
+		width: 100%;
+		opacity: 0;
+		-webkit-transition: opacity .3s ease-in-out;
+	   	   -moz-transition: opacity .3s ease-in-out;
+	   	     -o-transition: opacity .3s ease-in-out;
+	    		transition: opacity .3s ease-in-out;
+	}
+		#img-carousel li:nth-of-type(1) {
+			background-image: url('../img/header01bw.png');
+		}
+		#img-carousel li:nth-of-type(2) {
+			background-image: url('../img/header02bw.png');
+		}
+		#img-carousel li:nth-of-type(3) {
+			background-image: url('../img/header03bw.png');
+		}
+		#img-carousel li:nth-of-type(4) {
+			background-image: url('../img/header04bw.png');
+		}
+
 .overlay {
 	position: absolute;
-	top: 9.2%; /* Just enough to clear the navbar */
+	top: 0; /* Just enough to clear the navbar */
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 0px 0;
     text-align: center;
 	z-index: 10;
+	/* This section controls the masking along the bottom of the carousel */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(66%,rgba(0,0,0,0)), color-stop(75%,rgba(0,0,0,0.2)), color-stop(95%,rgba(0,0,0,1)), color-stop(105%,rgba(0,0,0,0.2))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 66%,rgba(0,0,0,0.2) 75%,rgba(0,0,0,1) 95%, rgba(0,0,0,1) 105%); /* Chrome10+,Safari5.1+ */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 66%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,1) 95%, rgba(0,0,0,1) 105%); /* FF3.6+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 66%,rgba(0,0,0,0.2) 75%,rgba(0,0,0,1) 95%, rgba(0,0,0,1) 105%); /* IE10+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 66%,rgba(0,0,0,0.2) 75%,rgba(0,0,0,1) 95%, rgba(0,0,0,1) 105%); /* Opera 11.10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 66%,rgba(0,0,0,0.2) 75%,rgba(0,0,0,1) 95%, rgba(0,0,0,1) 105%); /* W3C */
+	-webkit-transition: background .3s ease-in-out, color .3s ease-in-out;
+	   -moz-transition: background .3s ease-in-out, color .3s ease-in-out;
+	   	 -o-transition: background .3s ease-in-out, color .3s ease-in-out;
+	    	transition: background .3s ease-in-out, color .3s ease-in-out;
 }
-
 	.overlay h1 {
 		display: inline-block;
-	    margin: 5% 0 0 0;
+	    margin: 22.5% 0 0 0;
 		font-family: "Elite";
-	    font-size: 40px;
+	    font-size: 30px;
 		text-align: center;
 		color: black;
 	    -webkit-text-stroke: 1px #222222;
@@ -287,7 +339,7 @@ hr {
     .overlay h1 {
     	display: block;
         font-size: 100px;
-        margin-top: 0;
+        margin-top: 9.5%;
         font-size: 72px;
 	    letter-spacing: 27px;
     }
@@ -298,24 +350,6 @@ hr {
     }
 }   
 
-#carousel {
-	display: block;
-	position: relative;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	overflow: hidden;
-}
-	#carousel li {
-		display: inline-block;
-		position: relative;
-		float: left;
-		margin: 0;
-		padding: 0;
-	}
-	#carousel li img{
-		width: 100%;
-	}
 
 .btn-circle { /* Disabled when the navbar collapses */
 	display: none;
@@ -661,6 +695,10 @@ hr {
 }
 	#skills hr {
 		border-color: #EEB422;
+	}
+
+	#skills-js {
+		font-size: 14px;
 	}
 @media (min-width: 768px) {
 }
