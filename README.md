@@ -19,6 +19,6 @@ Since enrolling in Codify Academy, I've covered a range of different projects an
 
 **Google Results** - The second website reproduction project
 
-**Portfolio** - My personal portfolio
-
 **PSDWebsite** - Website reproduction from template image
+
+**Vault Shop** - A sample music store-front, responsive design. CSS only.

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Vault Shop</title>
+
+		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Oswald'>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<nav class="navbar" role="navigation">
+			<div class="user-bar"> <!-- Not viewable on mobile! -->
+				<ul class="social-buttons">
+					<li>
+						<a href="http://www.facebook.com/"><img class="social-fb" src="img/empty.png"></a>
+					</li>
+					<li>
+						<a href="http://www.twitter.com"><img class="social-tw" src="img/empty.png"></a>
+					</li>
+					<li>
+						<a href="http://plus.google.com/"><img class="social-gp" src="img/empty.png"></a>
+					</li>
+					<li>
+						<a href="http://www.youtube.com/"><img class="social-yt" src="img/empty.png"></a>
+					</li>
+					<li>
+						<a href="http://www.pinterest.com/"><img class="social-pn" src="img/empty.png"></a>
+					</li>
+				</ul>
+				<div class="user_info">
+					<a href="">Login</a> / <a href="">Register</a>
+				</div>
+			</div> <!--/.user-bar-->
+
+            <div class="nav-small"> <!-- The mobile navbar and its links -->
+                <h1>Vault Shop</h1>
+                <button type="button" class="navbar-toggle dropdown-toggle" data-toggle="dropdown" data-target="dropdown-menu">
+                    <span class="sr-only">Toggle navigation</span>
+					<span class="glyphicon glyphicon-list"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="">LOGIN</a></li>
+                    <li><a href="">REGISTER</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">CDs</a></li>
+                    <li><a href="">DVDs</a></li>
+                    <li><a href="">NEWS</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">CONTACT US</a></li>
+                </ul>
+            </div>
+
+            <div class="banner">
+		        <h1>Vault Shop</h1><br> <!-- Make sure this matches the <h1> from .nav-small -->
+				<ol class="breadcrumb">
+					<li><a href="">Vault Home</a></li>
+					<li class="active"><a href="">Shop</a></li>
+				</ol>
+            	<div class="roadsign"></div>
+			</div>   
+    	</nav>
+
+    	<div id="sort-bar">
+			<ul class="genre-list">
+				<li><a href="">ALL</a></li>
+				<li><span class="glyphicon glyphicon-pause"></span></li>
+				<li><a href="">ROCK</a></li>
+				<li><span class="glyphicon glyphicon-pause"></span></li>
+				<li><a href="">POP</a></li>
+				<li><span class="glyphicon glyphicon-pause"></span></li>
+				<li><a href="">METAL</a></li>
+				<li><span class="glyphicon glyphicon-pause"></span></li>
+				<li><a href="">DANCE</a></li>
+				<li><span class="glyphicon glyphicon-pause"></span></li>
+				<li><a href="">CLASSICAL</a></li>
+			</ul>
+
+			<div class="sort-by">
+				<p>Sort by:</p>
+				<select id="sort-by-box">
+					<option>Alphabetically</option>
+					<option>Popularity</option>
+					<option>Rating</option>
+					<option>Release (ascending)</option>
+					<option>Release (descending)</option>
+					<option>Relevance</option>
+					<option>Staff Favorites</option>
+				</select>
+    		</div>
+    	</div>
+
+
+    	<section class="content-holder">
+    		<div class="section-content">
+    			<div class="section-img">
+					<img src="img/album1.jpg">
+	    			<div class="sale_sticker">SALE!</div>
+    			</div>
+    			<div class="section-text">
+					<h1>Fancy Ultra•Fresh</h1> <h2>by Freezepop</h2>
+					<div class="stars">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star-empty"></span>
+					</div>
+					<p>Add some text about the item on display. It's roomy, and can comfortably hold 3 to 5 lines of text.</p>
+				</div>
+				<div class="price-holder">
+					<h1 class="price"><s>$17.99</s></h1><span class="sale-price">$11.99</span> <a class="btn-cart" href="#">ADD TO CART</a>
+				</div>
+    		</div>
+
+    		<div class="section-content">
+    			<div class="section-img">
+					<img src="img/album2.jpg">
+    			</div>
+    			<div class="section-text">
+					<h1>Mule Variations</h1> <h2>by Tom Waits</h2>
+					<div class="stars">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star-empty"></span>
+					</div>
+					<p>Add some text about the item on display. It's roomy, and can comfortably hold 3 to 5 lines of text.</p>
+				</div>
+				<div class="price-holder">
+					<h1 class="price">$17.99</h1><a class="btn-cart" href="#">ADD TO CART</a>
+				</div>
+    		</div>
+
+    		<div class="section-content">
+    			<div class="section-img">
+					<img src="img/album3.jpg">
+    			</div>
+    			<div class="section-text">
+					<h1>Freedom of Choice</h1> <h2>by Devo</h2>
+					<div class="stars">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star-empty"></span>
+					</div>
+					<p>Add some text about the item on display. It's roomy, and can comfortably hold 3 to 5 lines of text.</p>
+				</div>
+				<div class="price-holder">
+					<h1 class="price">$17.99</h1><a class="btn-cart" href="#">ADD TO CART</a>
+				</div>
+    		</div>
+
+    		<div class="section-content">
+    			<div class="section-img">
+					<img src="img/album4.jpg">
+    			</div>
+    			<div class="section-text">
+					<h1>Technical Difficulties</h1> <h2>by Racer X</h2>
+					<div class="stars">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star-empty"></span>
+					</div>
+					<p>Add some text about the item on display. It's roomy, and can comfortably hold 3 to 5 lines of text.</p>
+				</div>
+				<div class="price-holder">
+					<h1 class="price">$17.99</h1><a class="btn-cart" href="#">ADD TO CART</a>
+				</div>
+    		</div>
+
+    		<div class="section-content">
+    			<div class="section-img">
+					<img src="img/album5.jpg">
+    			</div>
+    			<div class="section-text">
+					<h1>Nanobots</h1> <h2>by They Might Be Giants</h2>
+					<div class="stars">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star-empty"></span>
+					</div>
+					<p>Add some text about the item on display. It's roomy, and can comfortably hold 3 to 5 lines of text.</p>
+				</div>
+				<div class="price-holder">
+					<h1 class="price">$17.99</h1><a class="btn-cart" href="#">ADD TO CART</a>
+				</div>
+    		</div>
+
+    		<div class="section-content">
+    			<div class="section-img">
+					<img src="img/album6.jpg">
+    			</div>
+    			<div class="section-text">
+					<h1>The Hi-De-Ho Man</h1> <h2>by Cab Calloway</h2>
+					<div class="stars">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star-empty"></span>
+					</div>
+					<p>Add some text about the item on display. It's roomy, and can comfortably hold 3 to 5 lines of text.</p>
+				</div>
+				<div class="price-holder">
+					<h1 class="price">$17.99</h1><a class="btn-cart" href="#">ADD TO CART</a>
+				</div>
+    		</div>
+    	</section>
+
+
+    	<!-- Additional content that appears on larger displays (1200px+) -->
+		<aside class="content-holder">
+			<div id="price">
+				<h1>PRICE FILTER</h1>
+				<span class="red_bar"></span>
+				<div id="price_slider">
+					<span class="red_box"></span>
+					<span class="white_bar"></span>
+					<span class="red_box"></span>
+				</div>
+				<p>Price: $0 - $999</p> <a href=""><span id="btn-filter"class="btn btn-custom">FILTER</span></a>
+			</div>
+
+			<div id="best" class="content-entry">
+				<h1>BEST SELLERS</h1>
+				<span class="red_bar"></span>
+				<div class="best-seller">
+					<img src="img/album4.jpg">
+					<h2>Technical Difficulties</h2>
+					<div class="stars">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star-empty"></span>
+					</div>
+					<a href=""><span class="glyphicon glyphicon-comment"></span>  12 COMMENTS</a>
+				</div>
+
+				<div class="best-seller">
+					<img src="img/album5.jpg">
+					<h2>Nanobots</h2>
+					<div class="stars">
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star"></span>
+						<span class="glyphicon glyphicon-star-empty"></span>
+					</div>
+					<a href=""><span class="glyphicon glyphicon-comment"></span>  12 COMMENTS</a>
+				</div>
+			</div>
+
+			<div id="categories" class="content-entry">
+				<h1>OUR CATEGORIES</h1>
+				<span class="red_bar"></span>
+				<a href=""><span class=" glyphicon glyphicon-chevron-right"></span> Rock & Roll <span class="comment_num">(8)</span></a>
+				<a href=""><span class=" glyphicon glyphicon-chevron-right"></span> Hardcore & Metal <span class="comment_num">(13)</span></a>
+				<a href=""><span class=" glyphicon glyphicon-chevron-right"></span> Dance & Pop <span class="comment_num">(5)</span></a>
+				<a href=""><span class=" glyphicon glyphicon-chevron-right"></span> Classical Music <span class="comment_num">(11)</span></a>
+				<a href=""><span class=" glyphicon glyphicon-chevron-right"></span> Jazz <span class="comment_num">(7)</span></a>
+				<a href=""><span class=" glyphicon glyphicon-chevron-right"></span> Country <span class="comment_num">(3)</span></a>
+			</div>
+
+			<div id="search_more">
+				<h1>SEARCH OUR ALBUMS</h1>
+				<span class="red_bar"></span>
+				<input><a href=""><div class="glyphicon glyphicon-search"></div></a>
+			</div>
+		</aside>
+
+    	<!-- 4 blocks of content that disappear/reappear as needed -->
+    	<footer> 
+    		<div class="content-footer"><!-- Appears at 530px -->
+				<h1>About us</h1>
+				<p>Put a small made-up blurb about <strong>Your Store</strong> here. There's a lot of room here. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+			</div>
+			<div class="content-footer"><!-- Appears at 530px -->
+				<h1>Our Archives</h1>
+				<a href=""><p>December 2014</p></a>
+				<a href=""><p>November 2014</p></a>
+				<a href=""><p>October 2014</p></a>
+				<a href=""><p>September 2014</p></a>
+			</div>
+			<div class="content-footer"><!-- Appears at 805px -->
+				<h1>Popular posts</h1>
+				<div class="f_blogpost">
+					<img src="img/album1.jpg">
+					<h2>Recommend an album</h2>
+					<a href=""><div class="glyphicon glyphicon-comment"></div><p>12 COMMENTS</p></a>
+				</div>
+				<div class="f_blogpost">
+					<img src="img/album3.jpg">
+					<h2>Great album!</h2>
+					<a href=""><div class="glyphicon glyphicon-comment"></div><p>12 COMMENTS</p></a>
+				</div>
+			</div>
+			<div class="content-footer"><!-- Appears at 1080px -->
+				<h1>Search our Site</h1>
+				<input>
+				<h1>Tag Cloud</h1>
+				<a href=""><span class="btn-cart cloud-tag">Audio CD</span></a>
+				<a href=""><span class="btn-cart cloud-tag">Video</span></a>
+				<a href=""><span class="btn-cart cloud-tag">Playlist</span></a>
+				<a href=""><span class="btn-cart cloud-tag">Avantgarde</span></a>
+				<a href=""><span class="btn-cart cloud-tag">Melancholic</span></a>
+			</div>
+			<span class="stretch"></span>		
+		</footer>
+
+		<!-- Corporate Footer, Copyright info -->
+		<div id="lower_footer">
+			<a href="">Home</a>
+			<a href="">Account</a>
+			<a href="">Sitemap</a>
+			<a href="">Contact</a>
+			<p>rob.hill ©2015</p>
+		</div>
+	</body>
+</html>
