@@ -1,85 +1,102 @@
 // Cellular Automata Simulator
 // (Based on Conway's Game of Life, http://en.wikipedia.org/wiki/Conway's_Game_of_Life )
+// All code by Rob.Hill@gmail.com
 
-// Fill the screen with a grid, randomly activate some of the cells,
-// and following the rules of CGoL, generate a new grid. Animate the
-// transition between states. All state-changes should happen at the same
-// time. After a set delay, process a new grid, animate, delay, repeat.
-// At any point, the user can pause the cycle, and click a cell to change
-// it's state before resuming. 
-
-// Right now, Initial generation is working again.
-// The check for activeNeighbors is somehow broken...  
-// Also need to finish 'the cycle', but it wont be accurate until 
-
-// Holds everything that needs to get passed around
 var $controller = new Object();
 
-//On load, grab all the default settings and load them into the $controller
-function initSettings() {
-	$controller.horz = $(window).width();
-	$controller.vert = $(window).height();
-	$controller.cellSize = 30; 				// This is just a default, link to a slider
-	$controller.colorTheme = $('#color-theme').val();
-	$controller.ruleSet = $('#rule-set').val();
-	$controller.animStyle = $('#anim-style').val();
-	$controller.delay = $('#delay-speed').val();
-	$controller.grid = new Array();			// Hold the 'current' grid we're looking at
-	$controller.gridNext = gridPopulator(); // This is the 'next' grid to be examined
-	$controller.running = true; 			// Running or Paused?
 
-	// Generates the div-cells to html
-	// NOTE: Can probably add this in the gridPopulator iterator to save time
-	$.each($controller.gridNext, function(j, horizontal) {
-		$.each(horizontal, function(i, tile) {
-			$('#content-window').append($("<div />", { 
-				class: "div-cell",
-				id: 'x'+i+'y'+j, 
-				x: i,
-				y: j
-			}));
-			$('#'+'x'+i+'y'+j).append(' ');
-			if (tile == 1) {
-				$('#'+'x'+i+'y'+j).addClass('active');
-			}
-		});
-	});
+function initSettings() {
+	$controller = {
+		running: true,
+		horz: $(window).width(),
+		vert: $(window).height(),
+		cellSize: $('#cell-size').val(),
+		colorTheme: $('#color-theme').val(),
+		ruleSet: $('#rule-set').val(),
+		animStyle: $('#anim-style').val(),
+		delay: $('#delay-speed').val(),
+		randSeed: $.now(),
+		chance: 10
+	}
+	$controller.grid = gridStarter($controller.randSeed);
+	$controller.gridNext = $controller.grid;
 }
 
-// Generates the initial random grid
-function gridPopulator() {
-	var x = Math.floor($controller.horz / $controller.cellSize);
-	var y = Math.floor($controller.vert / $controller.cellSize);
-	var random = Math.floor(Math.random() * $controller.randSeed);
+
+// Generates the initial randomized grid
+function gridStarter(seed) {
+	var xMax = Math.floor(($controller.horz / $controller.cellSize) + 0); //  0 works, 1 breaks
+	var yMax = Math.floor(($controller.vert / $controller.cellSize) + 0); //  But it needs to be 1 !!
+	var random = Math.floor(Math.random() * seed);
+	var chance = $controller.chance;
 	var tempArray = new Array();
 	var outputArray = new Array();
-	$controller.randSeed = $.now();
 
-	for (var j = 0; j < y; j++) {
+	for (var y = 0; y < yMax; y++) {
 		tempArray = [];
-		for (var i = 0; i < x; i++) {
-			// There's a 20% chance of rolling an active cell
-			random = Math.floor(Math.random() * $controller.randSeed);
-			if ((random % 100) <= 20) {
-				tempArray[i] = 1;
+		for (var x = 0; x < xMax; x++) {
+			random = Math.floor(Math.random() * seed);
+			if ((random % 100) <= chance) {
+				tempArray[x] = 1;
+				$('#x'+x+'y'+y).addClass('active');
 			} else {
-				tempArray[i] = 0;
+				tempArray[x] = 0;
 			}
 		}
-		outputArray[j] = tempArray;
+		outputArray[y] = tempArray;
 	}
 	return outputArray;
 }
 
 
-// A 3x3 range is set, go through the squares and count up the number of active tiles
+// Adds the html cells to the page
+function htmlGenerator(grid) {
+	var xMax = grid[0].length;
+	var yMax = grid.length;
+
+	for (var y = 0; y < yMax; y++) {
+		for (var x = 0; x < xMax; x++) {
+			if (x == 0) { // Each row gets its own 100% wide block
+				$('#content-window').append('<div class="cell-row" />');
+			}
+			$('.cell-row:last-of-type').append($("<div />", { 
+				class: "div-cell",
+				id: 'x'+x+'y'+y, 
+				x: x,
+				y: y
+			}));
+			$('#x'+x+'y'+y).append(' ');
+			if (x + 1 == xMax) { // The last element holds a line break
+				$('.cell-row:last-of-type').append("<br />");
+			}
+		}
+	}
+}
+
+
+// Read array and activate the appropriate cells
+function updateCellState(grid) {
+	for (var y = 0; y < grid.length; y++) {
+		for (var x = 0; x < grid[0].length; x++) {
+			if (grid[y][x] == 0) {
+				$('#x'+x+'y'+y).removeClass('active');
+			} else if (grid[y][x] == 1) {
+				$('#x'+x+'y'+y).addClass('active');
+			} else {
+				console.log('updateCellState Failed! x=' +x+ ' y=' +y+ ' state=' + grid[y][x]);
+				continue;
+			}
+		}
+	}
+}
+
+
+// A search range is set, go through the squares and count up the number of active tiles
 function checkNeighbors(range) {
 	var totalActive = 0;
-	console.log(range);
 
 	$.each($controller.grid.slice(range.yLower, range.yUpper + 1), function(y, horizontal) {
 		$.each(horizontal.slice(range.xLower, range.xUpper + 1), function(x, tile) {
-			console.log(x + ',' + y + ' = ', + tile);
 			if (tile == 1) {
 				totalActive += 1;
 			}
@@ -88,67 +105,57 @@ function checkNeighbors(range) {
 	return totalActive;
 }
 
-// Iterate through the grid, check each tile according to the specified rules.
-// Then create a new grid to store the output
-function determineGridNext() {
 
-	// Load the next grid into place
-	$controller.grid = $controller.gridNext;
-
-	var activeNeighbors = 0;	// How many adjacent tiles are active
+// Check each tile according to the specified rules, then push to gridNext
+function determineNextGrid(grid) {
+	var activeNeighbors = 0;
 	var boundaries = {			// When checking the array, make sure we stay in bounds
-		xLower: 0,
-		xUpper: 0,
-		yLower: 0,
-		yUpper: 0
+		xLower: 0, xUpper: 0,
+		yLower: 0, yUpper: 0
 	};
 
-
-	$.each($controller.grid, function(y, horizontal) {
+	$.each(grid, function(y, horizontal) {
 		$.each(horizontal, function(x, tile) {
 
 			// Set the search area boundaries first, then send boundaries to be checked
 			// The number returned determines the changes for the next step
 			if ($controller.ruleSet == 'rules-conway') { // The original Game of Life rules
-				if (x <= 0) { 
+				if ((x - 1) < 0) { 
 					boundaries.xLower = 0; 
 				} else { 
 					boundaries.xLower = (x - 1);	
 				}
 
-				if (y <= 0) {
+				if ((y - 1) < 0) {
 					boundaries.yLower = 0;
 				} else {
 					boundaries.yLower = (y - 1);
 				}
 
-				if ((x + 1) >= $controller.grid[y].length) {
+				if ((x + 1) >= grid[0].length) {
 					boundaries.xUpper = x;
 				} else {
 					boundaries.xUpper = (x + 1);
 				}
 
-				if ((y + 1) >= $controller.grid.length) {
+				if ((y + 1) >= grid.length) {
 					boundaries.yUpper = y;
 				} else {
 					boundaries.yUpper = (y + 1);
 				}
 
-				
 				// If tile is active, it got counted so ignore it
 				activeNeighbors = checkNeighbors(boundaries);
 				if (tile == 1 && activeNeighbors > 0) { 
 					activeNeighbors -= 1; 
 				}
-				console.log('Tile at ' + x + ',' + y + ' has ' + activeNeighbors + ' active neighbors.');
+				//console.log('Tile at ' + x + ',' + y + ' has ' + activeNeighbors + ' active neighbors.');
 
 				if (tile == 1 && activeNeighbors < 2) {
 					$controller.gridNext[y][x] = 0; // Underpopulation decay
-				}
-				else if (tile == 1 && activeNeighbors > 3) {
+				} else if (tile == 1 && activeNeighbors > 3) {
 					$controller.gridNext[y][x] = 0; // Overpopulation decay
-				}
-				else if (tile === 0 && activeNeighbors != 3) {
+				} else if (tile === 0 && activeNeighbors != 3) {
 					$controller.gridNext[y][x] = 0; // Inactive areas stay inactive
 				} else {
 					$controller.gridNext[y][x] = 1; // Growth
@@ -165,7 +172,8 @@ function determineGridNext() {
 	});
 }
 
-// User-forced changes, computed in the next cycle
+
+// User-forced state changes, computed in the next cycle
 function tileToggle(tile) {
 	var x = tile.attr('x');
 	var y = tile.attr('y');
@@ -178,7 +186,8 @@ function tileToggle(tile) {
 	tile.toggleClass('active');
 }
 
-// See if anything is different, then change it before doing anything else.
+
+// See if anything is different, then change it before generating another grid.
 function getUserChanges() {
 	if ($controller.colorTheme != $('#color-theme').val()) $controller.colorTheme = $('#color-theme').val();
 	if ($controller.ruleSet    != $('#rule-set').val())    $controller.ruleSet    = $('#rule-set').val();
@@ -186,18 +195,38 @@ function getUserChanges() {
 	if ($controller.delay      != $('#delay-speed').val()) $controller.delay      = $('#delay-speed').val();
 }
 
-function runSimulator() {
-	getUserChanges();
-	determineGridNext();
-}
 
+// The main processing loop
+function runSimulator() {
+	if ($controller.running) {
+		window.setTimeout("runSimulator()", $controller.delay);
+		updateCellState($controller.grid);
+		getUserChanges();
+		determineNextGrid($controller.grid);
+	}
+}
 
 
 $(document).ready(function() {	
 	initSettings();
-	runSimulator();
-
+	htmlGenerator($controller.grid);
 	$('.div-cell').click(function() {
 		tileToggle($(this));
 	});
+	runSimulator();
 });
+
+
+
+/* Resizing: 
+	If window is bigger than the last frame, generate arrays (or length of the subsequent arrays) to fill up the space (dont need to be activated)
+	If window is smaller than last time, destroy arrays (or parts of). 
+		Maybe we can save the info though? Maybe its not worth it, it's only valid for 1 frame.
+	Actually, it's better than that. The GridArray stays intact, we have to destroy the divs
+		So... On resize, see how many divs there SHOULD be (windowsize/cellsize + 1)
+		Then, look through divs by their X and Y properties, starting at the end (current cell count)
+			If ShouldHave > Current, add the right bits
+			If ShouldHave < Current, destroy some bits
+	...Actually no, BOTH need to be updated at the same time.
+
+*/

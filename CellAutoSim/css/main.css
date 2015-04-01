@@ -56,57 +56,92 @@ select, input, button {
 }
 
 #content-window {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 }
-	#content-window > div {
-		overflow: hidden;
-	}
-#control-panel {
-	position: fixed;
-	width: 300px;
-	top: -240px;
-	right: 0;
-	margin: 0 10px;
-	margin-bottom: 25px;
-	padding: 10px;
-	float: right;
-	background-color: #dddddd;
-	border: 1px solid #999999;
-	border-top: none;
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	-webkit-transition: top 1s ease-in-out;
-	transition: top 1s ease-in-out;
-}
-	#control-panel:hover {
-		top: 0;
-		-webkit-transition-delay: 1s;
-	}
-	.controls li {
+	.cell-row {
 		display: block;
-		padding: 5px 0;
+		height: 30px;
 	}
-#seed-input {
-	width: 35%;
-}
-#control-panel hr {
-	margin-top: 28px;
-}
+	.cell-row:first-of-type {
+		border-top: 1px solid black;
+	}
+	.div-cell:first-child {
+		border-left: 1px solid black;
+	}
 .div-cell {
-	display: inline;
+	display: inline-block;
 	position: relative;
+	box-sizing: border-box;
 	width: 30px; 
-	height: 30px;
+	height: 30px; /* Testing Only! */
 	margin: 0;
 	padding: 0;
-	border: none;
-	background-color: white;
-	color: white;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	background-color: transparent;
+	color: transparent;
 	float: left;
 }
 	.active {
 		background-color: black;
 		color: black;
 	}
+
+
+
+
+
+#control-panel {
+	position: fixed;
+	width: 300px;
+	top: -265px;
+	right: 0;
+	margin: 0 10px;
+	margin-bottom: 25px;
+	padding: 10px;
+	background-color: #dddddd;
+	border: 1px solid #999999;
+	border-top: none;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-webkit-transition: top 1s ease-in-out;
+	-moz-transition: top 1s ease-in-out;
+	-ms-transition: top 1s ease-in-out;
+	-o-transition: top 1s ease-in-out;
+	transition: top 1s ease-in-out;
+}
+	#control-panel:hover {
+		top: 0;
+	}
+	#control-panel hr {
+		margin-top: 28px;
+	}
+
+.controls li {
+	display: block;
+	padding: 5px 0;
+}
+	#seed-input {
+		-moz-appearance:textfield;
+		width: 35%;
+	}
+	#cell-span {
+		display: inline-block;
+		float: right;
+	}
+		#cell-size {
+			-moz-appearance:textfield;
+			float: none;
+			width: 20px;
+		}
+	#cell-size::-webkit-outer-spin-button,
+	#cell-size::-webkit-inner-spin-button,
+	#seed-size::-webkit-outer-spin-button,
+	#seed-size::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}

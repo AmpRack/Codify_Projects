@@ -22,6 +22,12 @@
 	<div id="control-panel">
 		<ul class="controls">
 			<li>
+				<p>Cell Size: </p>
+				<span id="cell-span">
+					<input id="cell-size" type="number" value="30" min="10" max="500" /> <p>px</p>
+				</span>
+			</li>
+			<li>
 				<p>Color theme: </p>
 				<select id="color-theme">
 					<option value="theme-mono">Black and White</option>
@@ -57,7 +63,7 @@
 				<span class="anim-button"><i class="fa fa-eject"></i></span>
 				<span class="anim-button reset">Clear all cells</span>
 				<p>Delay (in ms): </p>
-				<input id="delay-speed" type="number" min="500" max="5000" value="1000" width="5" />
+				<input id="delay-speed" type="number" min="500" max="5000" value="100" width="5" />
 			</li>
 			<li>
 				<button id="reload-button" type="button">Reload</button>
