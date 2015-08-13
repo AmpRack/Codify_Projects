@@ -5,8 +5,6 @@ Since enrolling in Codify Academy, I've covered a range of different projects an
 
 **37 Signals** - A website reproduction example
 
-**Battleship** - Just like the classic home game!
-
 **BootstrapJS** - A collection of Bootstrap/Javascript tutorials
 
 **BootstrapTutorial** - A collection of Bootstrap-Only tutorials
